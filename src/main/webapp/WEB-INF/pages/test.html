@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>模态框</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+
+
+<textarea name=""></textarea>
+<span id="span1">您还可以输出<strong>140</strong>个字</span>
+<span id="span2" style="display:none">您已超出<strong>140</strong>个字</span>
+<script>
+    var maxLength=140;
+    $('textarea').keydown(function(){
+        var l=$(this).val().length;
+        if(l>maxLength){
+            $('#span2 strong').text(l-maxLength);
+            $('#span1').hide();
+            $('#span2').show();
+        }else{
+            $('#span1 strong').text(maxLength-l);
+            $('#span2').hide();
+            $('#span1').show();
+        }
+    });
+</script>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

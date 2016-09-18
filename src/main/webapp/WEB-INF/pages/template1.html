@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏模板</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<!--为header设置背景图片-->
+<header class="main-header">
+    <!--当图片无法显示时，显示以下内容-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-hide">这是一个现代诗分享平台</h2>  <!--未设置样式-->
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--导航栏-->
+<nav class="main-navigation">
+    <div id="main-menu">
+        <ul class="menu">
+            <li><a href="home.html">首页</a></li>
+            <li><a href="recommend.html">今日推荐</a></li>
+            <li class="current-page"><a href="friends.jsp">朋友圈</a></li>
+            <li><a href="mine.html">个人中心</a></li>
+        </ul>
+        <!--小屏幕时显示的导航栏，默认隐藏-->
+        <span class="menu-small hide glyphicon glyphicon-chevron-down"></span>
+    </div>
+
+    <!--搜索框  样式有待改善-->
+    <div id="main-search">
+        <form id="form-search" action="" method="post">
+            <div class="input-group">
+                <input type="text" class="form-control poem-search" value="搜索" />
+                <button class="btn btn-default" onclick="document.getElementById('form-search').submit()">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</nav>
+<!--小屏幕时点击扩展图标的下拉菜单，默认隐藏-->
+<div class="assit-menu">
+    <ul class="menu">
+        <li><a href="home.html">首页</a></li>
+        <li><a href="recommend.html">今日推荐</a></li>
+        <li class="current-page"><a href="friends.jsp">朋友圈</a></li>
+        <li><a href="mine.html">个人中心</a></li>
+    </ul>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
