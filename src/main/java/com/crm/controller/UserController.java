@@ -26,7 +26,7 @@ public class UserController {
 		if(user!=null){
 			//model.addAttribute("retCode", 0);
 			model.addAttribute(user);
-			return "welcome";			
+			return "friends";
 		}
 		//model.addAttribute("retCode", 1);
 		return "fail";

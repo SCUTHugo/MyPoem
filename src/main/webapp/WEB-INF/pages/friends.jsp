@@ -1,17 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
+<%--jsp使用EL表达式访问WEB-INF外的css等资源--%>
+<c:set value="${pageContext.request.contextPath}" var="path" scope="page"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>朋友圈</title>
-    <link rel="stylesheet" href="../../css/reset.css" />
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="${path}/css/reset.css" />
+    <link rel="stylesheet" href="${path}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${path}/css/main.css" />
 </head>
 <body>
 <!--为header设置背景图片-->
@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="row">   <!--用row包裹，给图片设置栅格系统-->
                         <div class="dynamic-img col-sm-7 col-xs-9">
-                            <img src="../../img/这也是一切.jpg" alt="这也是一切" />
+                            <img src="${path}/img/ThisIsEverything.jpg" alt="这也是一切" />
                         </div>
                     </div>
                     <div class="dynamic-action">
@@ -123,7 +123,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <!--不能在评论框前面放用户名，不同长度的用户名会导致评论框的位置变动-->
                                 <!--<span class="my-name">张三</span>-->
                                 <a href="mine.html">
-                                    <img src="../../img/写评论.jpg" alt="输入你的评论" />
+                                    <img src="${path}/img/writeCommand.jpg" alt="输入你的评论" />
                                 </a>
                                 <textarea name="comment" class="input-comment" rows="2"></textarea>
                                 <br />
@@ -192,7 +192,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="row">
                         <div class="dynamic-img col-sm-7 col-xs-9">
-                            <img src="../../img/抉择.jpg" alt="这也是一切" />
+                            <img src="${path}/img/choose.jpg" alt="这也是一切" />
                         </div>
                     </div>
                     <div class="dynamic-action">
@@ -220,7 +220,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <!--不能在评论框前面放用户名，不同长度的用户名会导致评论框的位置变动-->
                                 <!--<span class="my-name">张三</span>-->
                                 <a href="mine.html">
-                                    <img src="../../img/写评论.jpg" alt="输入你的评论" />
+                                    <img src="${path}/img/writeCommand.jpg" alt="输入你的评论" />
                                 </a>
                                 <textarea name="comment" class="input-comment" rows="2"></textarea>
                                 <br />
@@ -314,8 +314,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/main.js"></script>
+<script src="${path}/js/jquery.min.js"></script>
+<script src="${path}/js/bootstrap.min.js"></script>
+<script src="${path}/js/main.js"></script>
 </body>
 </html>
